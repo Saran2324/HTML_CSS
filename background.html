@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+      }
+
+      .head {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: center;
+        text-align: center;
+        grid-gap: 70px;
+        margin-left: 20px;
+      }
+      .head p {
+        cursor: pointer;
+      }
+
+      .contain {
+        position: absolute;
+        background-color: white;
+        width: 80px;
+        height: 30px;
+        margin-top: 10px;
+        z-index: -1;
+        border-radius: 50px;
+        transition: background-color 1s ease, transform 0.5s; /* Transition for background color and transform */
+      }
+      
+  
+    </style>
+  </head>
+  <body onload="moveCont(1)">
+    <div class="head">
+      <p onclick="moveContain(1)">Home</p>
+      <p onclick="moveContain(2)">About</p>
+      <p onclick="moveContain(3)">Service</p>
+      <p onclick="moveContain(4)">Contact</p>
+    </div>
+    <div class="contain"></div>
+    <section id="name">
+      <h1>Saran S</h1>
+      <p>
+        Bachelor of Engineering ( ECE )<br />(2021-2025)<br />Kongu Engineering
+        college,perundurai.
+      </p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p></p>
+    </section>
+
+    <section id="resume">
+      <h2>Academic Profile</h2>
+      <div style="max-width: 600px; text-align: justify; margin-left: 300px">
+        <p>
+          Pursuing B.E in Electronics and Communication Engineering at Kongu
+          Engineering College, Perundurai, with a CGPA of 8.5 in fourth
+          Semester.
+
+          <br />
+          <br />
+          Completed HSC in 2021 at SKV Higher Secondary School with an aggregate
+          of 92.59% of marks.
+
+          <br />
+          <br />
+          Completed SSLC in 2019 at R N Oxford Matriculation School with an
+          aggregate of 92.2% of marks
+        </p>
+        <!-- Include your resume details here -->
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div style="display: flex; text-align: center">
+        <div style="width: 500px; text-align: justify; padding-left: 10em">
+          <h3>Road-safety</h3>
+          <p>
+            This project proposes an automatic accident data collection system
+            to reduce accident rates in the country. The system collects
+            accident data when detected, identifying hotspots, and implementing
+            necessary technology. It uses Arduino for message transfer and GPS
+            to locate accident spots. The system notifies nearest medical
+            centers and registered mobile numbers about the accident location,
+            using GSM and GPS modules. A vibration sensor detects accidents, and
+            the system can extend to providing medication to victims at the
+            accident spot. Additionally, technology can be used to prevent
+            accidents by implementing alert systems.
+          </p>
+          <!-- Showcase your projects with descriptions and links -->
+        </div>
+        <div style="padding-left: 50px">
+          <h3>IETE website design</h3>
+          <p></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill">
+        <p>java</p>
+        <p>java Frameworks</p>
+        <p>python</p>
+        <p>c</p>
+        <p>backend developement</p>
+      </div>
+      <!-- List your technical and soft skills -->
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: your.email@example.com</p>
+
+      <!-- Add more contact details if needed -->
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Your Portfolio. All rights reserved.</p>
+    </footer>
+    <script>
+      window.onload = function() {
+        const nameH1 = document.querySelector('#name h1');
+        nameH1.style.transition = 'transform 2s ease'; // Add transition
+        nameH1.style.transform = 'translateY(0px)'; // Apply transform
+      };
+    
+      function moveContain(index) {
+        const contain = document.querySelector(".contain");
+        const selectedParagraph = document.querySelector(
+          ".head p:nth-child(" + index + ")"
+        );
+    
+        const rect = selectedParagraph.getBoundingClientRect();
+        const offsetX =
+          rect.left + window.scrollX - contain.offsetWidth / 2 + 20 + index;
+        const offsetY = 0;
+        contain.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        contain.style.transition = `0.5s`;
+      }
+    
+      function moveCont(index) {
+        const contain = document.querySelector(".contain");
+        const selectedParagraph = document.querySelector(
+          ".head p:nth-child(" + index + ")"
+        );
+    
+        const rect = selectedParagraph.getBoundingClientRect();
+        const offsetX =
+          rect.left + window.scrollX - contain.offsetWidth / 2 + 20 + index;
+        const offsetY = 0;
+        contain.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        contain.style.backgroundColor = "aquamarine"; // Initial background color
+        contain.style.transition = `background-color 1s ease`;
+      }
+    </script>
+    
+
+    <script>
+      function moveContain(index) {
+        const contain = document.querySelector(".contain");
+        const selectedParagraph = document.querySelector(
+          ".head p:nth-child(" + index + ")"
+        );
+
+        const rect = selectedParagraph.getBoundingClientRect();
+        const offsetX =
+          rect.left + window.scrollX - contain.offsetWidth / 2 + 20 + index;
+        const offsetY = 0;
+        contain.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        contain.style.transition = `0.5s`;
+      }
+
+      function moveCont(index) {
+        const contain = document.querySelector(".contain");
+        const selectedParagraph = document.querySelector(
+          ".head p:nth-child(" + index + ")"
+        );
+
+        const rect = selectedParagraph.getBoundingClientRect();
+        const offsetX =
+          rect.left + window.scrollX - contain.offsetWidth / 2 + 20 + index;
+        const offsetY = 0;
+        contain.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        contain.style.backgroundColor = " aquamarine"; // Initial background color
+        contain.style.transition = `background-color 1s ease`;
+      }
+    </script>
+  </body>
+</html>
